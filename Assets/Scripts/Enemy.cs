@@ -1,5 +1,9 @@
+using System;
+using System.Collections;
 using SingletonScripts;
 using UnityEngine;
+using UnityEngine.U2D.Animation;
+
 public class Enemy : MonoBehaviour
 {
     
@@ -7,12 +11,15 @@ public class Enemy : MonoBehaviour
     [Header("Attributes")] 
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private int lifePoints = 5;
+    [SerializeField] private SpriteLibraryAsset stickySprites;
+    [SerializeField] private SpriteLibraryAsset regularSprites;
     
     private Animator _animator;
     private Rigidbody2D _rb;
     private SpriteRenderer _spriteRenderer;
 
     private bool _isDead;
+    private bool _isSticky;
     
     // This boolean determines if the enemy has been queued up in the queue that the towers pick their targets from. We only queue when the enemy becomes visible; we don't want shooting off the screen
     private bool _isQueued;
@@ -20,11 +27,16 @@ public class Enemy : MonoBehaviour
     private string _currentAnimation;
     private Transform _target;
     private int _nextWaypointIndex;
+    private float _initialMoveSpeed;
+    private SpriteLibrary _spriteLibrary;
+
     
     
 
     public void LoseLife(int lifeLost)
     {
+        
+        
         lifePoints -= lifeLost;
         if (lifePoints <= 0)
         {
@@ -34,6 +46,8 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        _spriteLibrary = GetComponent<SpriteLibrary>();
+        _initialMoveSpeed = moveSpeed;
         _target = LevelManager.Main.path[_nextWaypointIndex];
         _spriteRenderer = gameObject.GetComponent <SpriteRenderer>();
         _animator = gameObject.GetComponent<Animator>();
@@ -116,5 +130,24 @@ public class Enemy : MonoBehaviour
     public bool IsDead()
     {
         return _isDead;
+    }
+
+    public void TriggerSlip()
+    {
+        if (_isSticky) return;
+        _isSticky = true;
+
+        moveSpeed = _initialMoveSpeed/2;
+        _spriteLibrary.spriteLibraryAsset = stickySprites;
+        StartCoroutine(ResetMoveSpeedAfterDelay(2f));
+    }
+    
+    IEnumerator ResetMoveSpeedAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        _isSticky = false;
+        moveSpeed = _initialMoveSpeed; // Reset move speed after delay
+        _spriteLibrary.spriteLibraryAsset = regularSprites;
     }
 }

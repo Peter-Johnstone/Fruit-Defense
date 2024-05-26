@@ -8,19 +8,21 @@ namespace SingletonScripts
         private Collider2D _collider2D;
         private SpriteRenderer _spriteRenderer;
 
+        private Camera _camera;
         public static GoSign Main;
         private void Start()
         {
             Main = this;
             _collider2D = GetComponent<Collider2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _camera = Camera.main;
         }
     
         private void Update()
         {
             if (!_spriteRenderer.enabled) return;
         
-            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mouseWorldPos = _camera.ScreenToWorldPoint(Input.mousePosition);
         
             if (_collider2D.bounds.Contains(mouseWorldPos) && Input.GetMouseButtonDown(0))
             {

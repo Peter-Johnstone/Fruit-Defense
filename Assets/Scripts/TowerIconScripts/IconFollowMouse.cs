@@ -53,7 +53,6 @@ public class IconFollowMouse : MonoBehaviour
         _spriteRenderer.sprite = canPlaceImage;
         _camera = Camera.main;
         _draggerImageRenderer.sprite = _towerPrefab.GetComponent<SpriteRenderer>().sprite;
-        
         _validPlacementLayerMask = LayerMask.GetMask("No Tower Terrain") | LayerMask.GetMask("Tower");
     }
 

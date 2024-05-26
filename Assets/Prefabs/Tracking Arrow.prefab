@@ -98,3 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowSpeed: 30
+  coatedArrow: {fileID: 247365598481637274, guid: 335e442d642b51a40aa503c3d785d81d, type: 3}
+  coatedPath: {fileID: 8151865462694162747, guid: 5e7db3b6f83cd0f44b408ef435105a63, type: 3}

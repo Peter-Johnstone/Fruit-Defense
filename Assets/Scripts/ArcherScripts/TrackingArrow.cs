@@ -1,47 +1,56 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TrackingArrow : MonoBehaviour
+namespace ArcherScripts
 {
-    [SerializeField] private float arrowSpeed;
-    
-    private Transform _target;
-    private Enemy _enemy;
-    private SpriteRenderer _spriteRenderer;
-    
-    
-    private void Start()
+    public class TrackingArrow : MonoBehaviour
     {
-        _target = GetComponentInParent<TrackingArrowSpawner>().GetTarget();
-        _enemy = _target.GetComponent<Enemy>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRenderer.sprite = GetComponentInParent<TrackingArrowSpawner>().GetAnimationArrowImage();
-    }
+        [SerializeField] private float arrowSpeed;
+        [SerializeField] private Sprite coatedArrow;
+        [SerializeField] private GameObject coatedPath;
+    
+        private Transform _target;
+        private Enemy _enemy;
+        private SpriteRenderer _spriteRenderer;
 
-    private void FixedUpdate()
-    {
-        if (!_target)
+        private bool _coated;
+
+    
+    
+        private void Start()
         {
-            Destroy(gameObject);
-            return;
+            _target = GetComponentInParent<TrackingArrowSpawner>().GetTarget();
+            _enemy = _target.GetComponent<Enemy>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _spriteRenderer.sprite = GetComponentInParent<TrackingArrowSpawner>().GetAnimationArrowImage();
+            _coated = _spriteRenderer.sprite == coatedArrow;
         }
 
-        Vector3 direction = (_target.position - transform.position).normalized;
-
-        float distance = Vector2.Distance(_target.position, transform.position);
-
-        if (distance > arrowSpeed * Time.fixedDeltaTime)
+        private void FixedUpdate()
         {
-            // Move the arrow normally
-            transform.position += direction * (arrowSpeed * Time.fixedDeltaTime);
-        }
-        else
-        {
-            if (!_enemy.IsDead()) 
-                _enemy.LoseLife(1);
-            Destroy(gameObject); 
+            if (!_target)
+            {
+                
+                Destroy(gameObject);
+                return;
+            }
+
+            Vector3 direction = (_target.position - transform.position).normalized;
+
+            float distance = Vector2.Distance(_target.position, transform.position);
+
+            if (distance > arrowSpeed * Time.fixedDeltaTime)
+            {
+                // Move the arrow normally
+                transform.position += direction * (arrowSpeed * Time.fixedDeltaTime);
+            }
+            else
+            {
+                if (!_enemy.IsDead()) 
+                    _enemy.LoseLife(1);
+                if (_coated)
+                    Instantiate(coatedPath, _enemy.transform.position, transform.rotation);
+                Destroy(gameObject); 
+            }
         }
     }
 }

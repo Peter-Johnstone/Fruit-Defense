@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: MoveDown
+    m_Hash: 996459169
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: gremlinDown1
+      m_Hash: 84931311
+      m_Sprite: {fileID: 1144116895, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 2046686576, guid: 8cfa8e57b977fa448a69a0bb5b5e64c0, type: 3}
+    - m_Name: gremlinDown2
+      m_Hash: 470197077
+      m_Sprite: {fileID: 1602657116, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1458975571, guid: 8cfa8e57b977fa448a69a0bb5b5e64c0, type: 3}
+    - m_Name: gremlinDown3
+      m_Hash: 721523651
+      m_Sprite: {fileID: -1074757555, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1447184629, guid: 8cfa8e57b977fa448a69a0bb5b5e64c0, type: 3}
+    - m_Name: gremlinDown4
+      m_Hash: 895813216
+      m_Sprite: {fileID: 675841060, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 675841060, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 3
+  - m_Name: MoveUp
+    m_Hash: 250050091
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: gremlinUp1
+      m_Hash: 418762860
+      m_Sprite: {fileID: 1920196807, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1497109579, guid: 8cfa8e57b977fa448a69a0bb5b5e64c0, type: 3}
+    - m_Name: gremlinUp2
+      m_Hash: 33325526
+      m_Sprite: {fileID: 2050507357, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -2066027899, guid: 8cfa8e57b977fa448a69a0bb5b5e64c0, type: 3}
+    - m_Name: gremlinUp3
+      m_Hash: 922464576
+      m_Sprite: {fileID: 1860387931, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -268808523, guid: 8cfa8e57b977fa448a69a0bb5b5e64c0, type: 3}
+    - m_Name: gremlinUp4
+      m_Hash: 681518307
+      m_Sprite: {fileID: -1032113760, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 217485850, guid: 8cfa8e57b977fa448a69a0bb5b5e64c0, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 4
+  - m_Name: MoveLeft
+    m_Hash: 503100914
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: gremlinLeft1
+      m_Hash: 923495126
+      m_Sprite: {fileID: 1161186321, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1928856884, guid: 8cfa8e57b977fa448a69a0bb5b5e64c0, type: 3}
+    - m_Name: gremlinLeft2
+      m_Hash: 771898220
+      m_Sprite: {fileID: -771721196, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 455674398, guid: 8cfa8e57b977fa448a69a0bb5b5e64c0, type: 3}
+    - m_Name: gremlinLeft3
+      m_Hash: 419761146
+      m_Sprite: {fileID: -1574396095, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1663077302, guid: 8cfa8e57b977fa448a69a0bb5b5e64c0, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 3
+  - m_Name: MoveRight
+    m_Hash: 616010780
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: gremlinRight1
+      m_Hash: 817470439
+      m_Sprite: {fileID: 1870726860, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -887547690, guid: 8cfa8e57b977fa448a69a0bb5b5e64c0, type: 3}
+    - m_Name: gremlinRight2
+      m_Hash: 699451997
+      m_Sprite: {fileID: 1597923463, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -802714183, guid: 8cfa8e57b977fa448a69a0bb5b5e64c0, type: 3}
+    - m_Name: gremlinRight3
+      m_Hash: 515373771
+      m_Sprite: {fileID: 1735282451, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1559279726, guid: 8cfa8e57b977fa448a69a0bb5b5e64c0, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 3
+  - m_Name: Bleed
+    m_Hash: 162039783
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: gremlinBleed1
+      m_Hash: 329015173
+      m_Sprite: {fileID: 1042172861, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1042172861, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+    - m_Name: gremlinBleed2
+      m_Hash: 177540671
+      m_Sprite: {fileID: 1122015951, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1122015951, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+    - m_Name: gremlinBleed3
+      m_Hash: 1032994473
+      m_Sprite: {fileID: 1265239942, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1265239942, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+    - m_Name: gremlinBleed4
+      m_Hash: 603368202
+      m_Sprite: {fileID: 920069948, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 920069948, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+    - m_Name: gremlinBleed5
+      m_Hash: 351378332
+      m_Sprite: {fileID: 968425963, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 968425963, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 0
+  m_PrimaryLibraryGUID: 143f1a4158749bd45a7b8f569444a4e1
+  m_ModificationHash: 638522661450478519
+  m_Version: 1

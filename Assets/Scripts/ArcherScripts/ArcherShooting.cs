@@ -74,7 +74,7 @@ public class ArcherShooting : MonoBehaviour
         _timer += Time.deltaTime;
         if (_timer < _shootingAnimationDuration + attackCooldown) return;
 
-        if (Random.value > .9 && !_isCoating && _coatArrowUpgrade)
+        if (Random.value > .8 && !_isCoating && _coatArrowUpgrade)
         {
             // On random chance, we will coat the arrow.
             archerAnimator.SetTrigger("TriggerCoatArrow");
