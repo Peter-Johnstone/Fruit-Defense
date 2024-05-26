@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using SingletonScripts;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UpdateMenuScripts;
 
 public class IconFollowMouse : MonoBehaviour
 {
@@ -14,28 +15,18 @@ public class IconFollowMouse : MonoBehaviour
     [SerializeField] private Sprite cantPlaceImage;
 
     [SerializeField] private float hitboxRadius;
-
-    public static bool TowerPlacedThisFrame;
+    
     private GameObject _towerPrefab;
     private SpriteRenderer _spriteRenderer;
     private SpriteRenderer _draggerImageRenderer;
     private bool _currentlyShowing = false;
     private LayerMask _validPlacementLayerMask;
     private LayerMask _towerLayerMask;
+
     
     private Camera _camera;
-    
-    private void OnEnable()
-    {
-        TowerIcon.OnClicked += HandleOnClicked;
-    }
 
-    private void OnDisable()
-    {
-        TowerIcon.OnClicked -= HandleOnClicked;
-    }
-
-    private void HandleOnClicked()
+    public void HandleOnClicked()
     {
         if (!_currentlyShowing)
         {
@@ -60,7 +51,7 @@ public class IconFollowMouse : MonoBehaviour
     
     private void Update()
     {
-        TowerPlacedThisFrame = false;
+
         if (!_currentlyShowing) return;
         
         
@@ -77,7 +68,7 @@ public class IconFollowMouse : MonoBehaviour
 
             if (!validTowerPlacement) return;
             // Valid Placement + Click: Buy and Place Tower
-            TowerPlacedThisFrame = true;
+            UpgradeMenu.Main.TowerWasPlacedThisFramed();
             Economy.Main.BuyTower(CostsData.Main.GetTowerCost(_towerPrefab.name));
             Instantiate(_towerPrefab, transform.position, transform.rotation);
 

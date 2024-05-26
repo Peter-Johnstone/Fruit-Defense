@@ -8,8 +8,6 @@ using UnityEngine.EventSystems;
 
 public class TowerIcon : MonoBehaviour
 {
-    public delegate void ClickAction();
-    public static event ClickAction OnClicked;
 
     public GameObject towerPrefab; 
     private Collider2D _collider2D;
@@ -17,6 +15,7 @@ public class TowerIcon : MonoBehaviour
     private SpriteRenderer _purchasableOverlayRenderer;
 
     private TextMeshProUGUI _towerCostTMP;
+    [SerializeField] private IconFollowMouse _iconFollowMouse;
 
     private Camera _camera;
     private void Start()
@@ -32,7 +31,7 @@ public class TowerIcon : MonoBehaviour
         Vector2 mouseWorldPos = _camera.ScreenToWorldPoint(Input.mousePosition);
         if (_collider2D.bounds.Contains(mouseWorldPos) && Input.GetMouseButtonDown(0))
         {
-            OnClicked?.Invoke();
+            _iconFollowMouse.HandleOnClicked();
         }
 
         // Check if we can afford the tower. This changes the icon's display.

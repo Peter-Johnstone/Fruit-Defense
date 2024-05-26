@@ -11,11 +11,12 @@ namespace UpdateMenuScripts
         public GameObject UpgradeMenuTower { get; private set; }
 
         [SerializeField] private GameObject upgradeMenuHitbox;
-
+        [SerializeField] private SpriteRenderer selectedSpriteRenderer;
 
         private LayerMask _towerLayerMask;
         private LayerMask _upgradeMenuLayerMask;
 
+        private bool _towerPlacedThisFrame;
         private Camera _camera;
         private Selector _selectedSpriteSelector;
 
@@ -32,15 +33,16 @@ namespace UpdateMenuScripts
             _camera = Camera.main;
         }
 
-        private void Update()
+        private void LateUpdate()
         {
             CheckUpgradeMenuVisibility();
+            _towerPlacedThisFrame = false;
         }
 
         private void CheckUpgradeMenuVisibility()
         {
             // The following will ignore if A: the player hasn't clicked the screen, or B: the player has placed a tower this frame. We don't want to select on such cases.
-            if (!Input.GetMouseButtonDown(0) || IconFollowMouse.TowerPlacedThisFrame) return;
+            if (!Input.GetMouseButtonDown(0) || _towerPlacedThisFrame) return;
             
             Vector2 mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
 
@@ -73,7 +75,11 @@ namespace UpdateMenuScripts
             _selectedSpriteSelector.SelectSprite(); // Select new sprite
             
             UpgradeMenuTower = tower;
-            upgradeMenuHitbox.SetActive(true);
+            if (upgradeMenuHitbox.activeSelf)
+                selectedSpriteRenderer.sprite = tower.GetComponent<SpriteRenderer>().sprite;
+            else
+                upgradeMenuHitbox.SetActive(true);
+            
             LeftUpgradeText.SetUpgradedText();
             RightUpgradeText.SetUpgradedText();
         }
@@ -85,6 +91,13 @@ namespace UpdateMenuScripts
             upgradeMenuHitbox.SetActive(false);
             _selectedSpriteSelector = null;
             UpgradeMenuTower = null;
+        }
+
+        
+
+        public void TowerWasPlacedThisFramed()
+        {
+            _towerPlacedThisFrame = true;
         }
     }
 }

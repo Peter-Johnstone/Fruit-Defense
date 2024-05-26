@@ -7,6 +7,7 @@ namespace SingletonScripts
     public class CostsData : MonoBehaviour
     {
         [SerializeField] private int archerCost;
+        [SerializeField] private int pineappleCost;
 
         public static CostsData Main { get; private set; }
 
@@ -23,6 +24,8 @@ namespace SingletonScripts
             {
                 case "Archer":
                     return archerCost;
+                case "Pineapple":
+                    return pineappleCost;
             }
 
             return -1;

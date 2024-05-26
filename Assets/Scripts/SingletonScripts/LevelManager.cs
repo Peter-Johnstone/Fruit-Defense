@@ -121,5 +121,10 @@ namespace SingletonScripts
             _totalEnemiesToBeSpawned = _totalEnemiesToBeSpawnedByLevel[_currentLevel];
             Level.Main.UpdateText(_currentLevel + 1);
         }
+        
+        public bool RoundOver()
+        {
+            return _roundOver;
+        }
     }
 }

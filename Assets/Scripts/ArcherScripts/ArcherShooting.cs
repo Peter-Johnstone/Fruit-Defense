@@ -136,6 +136,7 @@ public class ArcherShooting : MonoBehaviour
 
     public void TriggerShoot()
     {
+        if (LevelManager.Main.RoundOver()) return;
         _target = LevelManager.Main.Enemies.Peek().transform;
         _bowAnimator.SetTrigger("ShootTrigger");
         _timer = 0;
