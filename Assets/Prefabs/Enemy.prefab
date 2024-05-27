@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  lifePoints: 3
+  lifePoints: 2
   stickySprites: {fileID: 7108339969198208228, guid: bd6708b5adb75114f88eb6fb99acdb2e, type: 3}
   regularSprites: {fileID: 7108339969198208228, guid: 143f1a4158749bd45a7b8f569444a4e1, type: 3}
 --- !u!50 &5935370663080122943
@@ -186,7 +186,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0020536259, y: -0.08332576}
+  m_Offset: {x: 0.0040574074, y: -0.008133385}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -197,7 +197,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.11286391, y: 0.05334848}
+  m_Size: {x: 0.13783947, y: 0.13358912}
   m_EdgeRadius: 0
 --- !u!114 &8451815168340582549
 MonoBehaviour:

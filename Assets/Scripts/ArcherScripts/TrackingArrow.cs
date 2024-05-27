@@ -19,6 +19,12 @@ namespace ArcherScripts
         private void Start()
         {
             _target = GetComponentInParent<TrackingArrowSpawner>().GetTarget();
+            if (_target == null)
+            {
+                
+                Destroy(gameObject);
+                return;
+            }
             _enemy = _target.GetComponent<Enemy>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _spriteRenderer.sprite = GetComponentInParent<TrackingArrowSpawner>().GetAnimationArrowImage();
@@ -27,7 +33,7 @@ namespace ArcherScripts
 
         private void FixedUpdate()
         {
-            if (!_target)
+            if (_target == null)
             {
                 
                 Destroy(gameObject);

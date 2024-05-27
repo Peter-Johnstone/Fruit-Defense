@@ -10,13 +10,11 @@ using UnityEngine.U2D;
 public class Selector : MonoBehaviour
 {
     // Start is called before the first frame update
-    private SpriteRenderer _rangeRenderer;
     private SpriteRenderer _selectionSpriteRenderer;
     private SpriteRenderer[] _spriteRenderers;
     
     private void Awake()
     {
-        _rangeRenderer = transform.Find("Range").GetComponent<SpriteRenderer>();
         _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         _selectionSpriteRenderer = transform.Find("Selection Image").GetComponent<SpriteRenderer>();
     }
@@ -28,7 +26,6 @@ public class Selector : MonoBehaviour
             spriteRenderer.sortingOrder -= 2;
         }
         
-        _rangeRenderer.enabled = false;
         _selectionSpriteRenderer.enabled = false;
     }
 
@@ -38,7 +35,6 @@ public class Selector : MonoBehaviour
         {
             spriteRenderer.sortingOrder += 2;
         }
-        _rangeRenderer.enabled = true;
         _selectionSpriteRenderer.enabled = true; 
     }
 }

@@ -84,6 +84,7 @@ public class Enemy : MonoBehaviour
 
     private void AnimateEnemy(Vector2 direction)
     {
+        if (IsDead()) return;
         var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         angle = (angle + 360) % 360;
 

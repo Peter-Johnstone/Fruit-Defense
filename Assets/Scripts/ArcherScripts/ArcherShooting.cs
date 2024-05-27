@@ -23,6 +23,7 @@ public class ArcherShooting : MonoBehaviour
     
     
     [SerializeField] private SpriteLibraryAsset bowLevel2;
+    [SerializeField] private Collider2D rangeCollider;
     
     private const float RotationSpeed = 3;
     private const float PositionSpeed = 10f;
@@ -62,9 +63,12 @@ public class ArcherShooting : MonoBehaviour
     {
         if (LevelManager.Main.Enemies.Count == 0) return;
         
-        _target = LevelManager.Main.Enemies.Peek().transform;
-        HandleRotation();
-        HandleShooting();
+        CreateTarget();
+        if (_target)
+        {
+            HandleRotation();
+            HandleShooting();
+        }
     }
 
     private void HandleShooting()
@@ -118,7 +122,7 @@ public class ArcherShooting : MonoBehaviour
             _coatArrowUpgrade = true;
         if (_upgrades.RightUpgradePathLevel == 1)
         {
-            attackCooldown = 1f;
+            attackCooldown = .6f;   
             _spriteLibrary.spriteLibraryAsset = bowLevel2;
         }
     }
@@ -137,7 +141,7 @@ public class ArcherShooting : MonoBehaviour
     public void TriggerShoot()
     {
         if (LevelManager.Main.RoundOver()) return;
-        _target = LevelManager.Main.Enemies.Peek().transform;
+        CreateTarget();
         _bowAnimator.SetTrigger("ShootTrigger");
         _timer = 0;
         
@@ -146,7 +150,17 @@ public class ArcherShooting : MonoBehaviour
                 
         _isCoating = false;
     }
-    
+
+    private void CreateTarget()
+    {
+        _target = LevelManager.Main.Enemies.Peek().transform;
+        if (!rangeCollider.IsTouching(_target.GetComponent<Collider2D>()))
+        {
+            // If out of range, remove the target.
+            _target = null;
+        }
+    }
+
     public Transform GetTarget()
     {
         return _target;
