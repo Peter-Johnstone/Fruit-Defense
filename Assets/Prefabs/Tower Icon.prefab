@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b1b3757df1c8bb4d9fc598f47ebe13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canPlaceImage: {fileID: 6107316717277521090, guid: cb5920794d36798468f648b96e944c82, type: 3}
+  canPlaceImage: {fileID: 21300000, guid: 190d88db94387ac47a5c3e69e88dc053, type: 3}
   cantPlaceImage: {fileID: -3697362386713011662, guid: d9bd04c562245a446ad48a0d94fc736f, type: 3}
   hitboxRadius: 0.4
 --- !u!1 &5671983124539446791

@@ -401,7 +401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -448.37, y: -247.21}
+  m_AnchoredPosition: {x: -447.55, y: -247.83}
   m_SizeDelta: {x: 113.6151, y: 11.9909}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1562272719
@@ -424,10 +424,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Get Fucked Idiot
+  m_text: You Lose, Nerd!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3a4a8992c56ea2741847ad6d6514818b, type: 2}
+  m_sharedMaterial: {fileID: 7664488356551292066, guid: 3a4a8992c56ea2741847ad6d6514818b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -581,7 +581,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &2076089014
 RectTransform:

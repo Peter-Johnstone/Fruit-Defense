@@ -12,7 +12,10 @@ namespace UpdateMenuScripts
 
         [SerializeField] private GameObject upgradeMenuHitbox;
         [SerializeField] private SpriteRenderer selectedSpriteRenderer;
-
+        [SerializeField] private Transform upgradeMenuLeftPosition;
+        [SerializeField] private Transform upgradeMenuRightPosition;
+        
+        
         private LayerMask _towerLayerMask;
         private LayerMask _upgradeMenuLayerMask;
 
@@ -58,7 +61,7 @@ namespace UpdateMenuScripts
                 }
                 
                 // We've clicked on a tower
-                DisplayUpgradeMenu(clickedTower.gameObject);
+                DisplayUpgradeMenu(clickedTower.gameObject, mousePosition);
                 
             }
             else if (_selectedSpriteSelector)
@@ -68,7 +71,7 @@ namespace UpdateMenuScripts
             }
         }
         
-        private void DisplayUpgradeMenu(GameObject tower)
+        private void DisplayUpgradeMenu(GameObject tower, Vector2 mousePosition)
         {
             _selectedSpriteSelector?.DeselectSprite(); // Deselect old sprite
             _selectedSpriteSelector = tower.GetComponent<Selector>(); // Identify new sprite
@@ -79,7 +82,9 @@ namespace UpdateMenuScripts
                 selectedSpriteRenderer.sprite = tower.GetComponent<SpriteRenderer>().sprite;
             else
                 upgradeMenuHitbox.SetActive(true);
-            
+
+            upgradeMenuHitbox.transform.position = mousePosition.x < 2.7 ? upgradeMenuRightPosition.position : upgradeMenuLeftPosition.position;
+            DamageDisplay.UpdateRelevantTowerStats();
             LeftUpgradeText.SetUpgradedText();
             RightUpgradeText.SetUpgradedText();
         }

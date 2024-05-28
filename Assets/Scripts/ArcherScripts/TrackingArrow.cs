@@ -7,11 +7,15 @@ namespace ArcherScripts
         [SerializeField] private float arrowSpeed;
         [SerializeField] private Sprite coatedArrow;
         [SerializeField] private GameObject coatedPath;
-    
+        
+        
+        
         private Transform _target;
         private Enemy _enemy;
         private SpriteRenderer _spriteRenderer;
-
+        private Stats _stats;
+        
+        
         private bool _coated;
 
     
@@ -27,7 +31,11 @@ namespace ArcherScripts
             }
             _enemy = _target.GetComponent<Enemy>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            _spriteRenderer.sprite = GetComponentInParent<TrackingArrowSpawner>().GetAnimationArrowImage();
+            TrackingArrowSpawner trackingArrowSpawner= GetComponentInParent<TrackingArrowSpawner>();
+            _spriteRenderer.sprite = trackingArrowSpawner.GetAnimationArrowImage();
+            _stats = GetComponentInParent<Stats>();
+            
+            
             _coated = _spriteRenderer.sprite == coatedArrow;
         }
 
@@ -51,8 +59,12 @@ namespace ArcherScripts
             }
             else
             {
-                if (!_enemy.IsDead()) 
+                if (!_enemy.IsDead())
+                {
                     _enemy.LoseLife(1);
+                    _stats.IncreaseTotalDamage(1);
+                }
+
                 if (_coated)
                     Instantiate(coatedPath, _enemy.transform.position, transform.rotation);
                 Destroy(gameObject); 

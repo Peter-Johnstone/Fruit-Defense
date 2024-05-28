@@ -47,6 +47,7 @@ MonoBehaviour:
   animationArrow: {fileID: 6198753796803098199}
   trackingArrow: {fileID: 162861358861471612, guid: 5a9c4c6e29fe53f4691e8c56c3af2960, type: 3}
   bow: {fileID: 5459818757794656030}
+  _stats: {fileID: 4088311019482613500}
 --- !u!1 &3485463138518650454
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +121,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 83b13a2a5ec9a084f9d2167c7bbccc5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -443,6 +444,7 @@ GameObject:
   - component: {fileID: 7771877919895261820}
   - component: {fileID: 6788429508670862776}
   - component: {fileID: 3972690473157926262}
+  - component: {fileID: 4088311019482613500}
   m_Layer: 7
   m_Name: Archer
   m_TagString: Untagged
@@ -620,5 +622,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4bb6901a96641d44a18249017bf3a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4088311019482613500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886682597973064249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37dbdcf2ccff0194fabd904d7137c9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
