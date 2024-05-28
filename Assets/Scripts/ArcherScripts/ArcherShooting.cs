@@ -23,6 +23,7 @@ public class ArcherShooting : MonoBehaviour
     
     
     [SerializeField] private SpriteLibraryAsset bowLevel2;
+    [SerializeField] private SpriteLibraryAsset bowLevel3;
     [SerializeField] private Collider2D rangeCollider;
     
     private const float RotationSpeed = 3;
@@ -122,8 +123,14 @@ public class ArcherShooting : MonoBehaviour
             _coatArrowUpgrade = true;
         if (_upgrades.RightUpgradePathLevel == 1)
         {
-            attackCooldown = .6f;   
+            attackCooldown = 1f;   
             _spriteLibrary.spriteLibraryAsset = bowLevel2;
+        }
+
+        if (_upgrades.RightUpgradePathLevel == 2)
+        {
+            attackCooldown = .5f;
+            _spriteLibrary.spriteLibraryAsset = bowLevel3;
         }
     }
 
@@ -153,11 +160,16 @@ public class ArcherShooting : MonoBehaviour
 
     private void CreateTarget()
     {
-        _target = LevelManager.Main.Enemies.Peek().transform;
-        if (!rangeCollider.IsTouching(_target.GetComponent<Collider2D>()))
+        _target = null;
+        
+        // Try to find the first target-able enemy in the list of enemies. Break once we find one, alternatively, if none are found, _target remains null.
+        foreach (GameObject enemy in LevelManager.Main.Enemies)
         {
-            // If out of range, remove the target.
-            _target = null;
+            if (rangeCollider.IsTouching(enemy.GetComponent<Collider2D>()))
+            {
+                _target = enemy.transform;
+                break;
+            }
         }
     }
 

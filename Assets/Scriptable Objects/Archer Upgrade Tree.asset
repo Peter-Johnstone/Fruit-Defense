@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Archer Upgrade Tree
   m_EditorClassIdentifier: 
   leftUpgrades:
-  - Juicy Bolts
+  - Juicy Bolts (20)
   - Something
   rightUpgrades:
-  - Rapid Fire
-  - Something2
+  - Rapid Fire (15)
+  - Super Speed (10)
+  leftUpgradeCosts: 1400000000000000
+  rightUpgradeCosts: 0f0000000a000000

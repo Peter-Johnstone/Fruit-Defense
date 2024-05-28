@@ -11,7 +11,7 @@ namespace SingletonScripts
         public static LevelManager Main;
         public Transform startPoint;
         public Transform[] path;
-        public Queue<GameObject> Enemies;
+        public List<GameObject> Enemies;
         
         public delegate void RoundOverAction();
         public event RoundOverAction OnRoundOver;
@@ -38,7 +38,7 @@ namespace SingletonScripts
             Main = this;
             
             
-            Enemies = new Queue<GameObject>();
+            Enemies = new List<GameObject>();
 
             _currentLevel = - 1;
             _totalEnemiesToBeSpawnedByLevel = new[] { 5, 15, 20, 30, 30, 60, 60 };
@@ -72,13 +72,13 @@ namespace SingletonScripts
 
         }
 
-        public void EnqueueEnemy(GameObject enemy)
+        public void AddEnemy(GameObject enemy)
         {
-            Enemies.Enqueue(enemy);
+            Enemies.Add(enemy);
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
-        public void DequeueEnemy(bool gotThrough)
+        public void DequeueEnemy(bool gotThrough, GameObject enemy)
         {
             if (gotThrough)
             {
@@ -87,8 +87,9 @@ namespace SingletonScripts
                     SceneManager.LoadScene("GameOver");
             }
             else Economy.Main.IncreaseCoins(1);
-        
-            Enemies.Dequeue().GetComponent<Enemy>().KillEnemy();
+
+            Enemies.Remove(enemy);
+            enemy.GetComponent<Enemy>().KillEnemy();
         
             // Check if the round is over
             if (Enemies.Count <= 0 && _totalEnemiesToBeSpawned <= 0 && !_roundOver)

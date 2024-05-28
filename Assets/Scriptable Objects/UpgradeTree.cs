@@ -8,4 +8,8 @@ public class UpgradeTree : ScriptableObject
     public string[] leftUpgrades;
 
     public string[] rightUpgrades;
+
+    public int[] leftUpgradeCosts;
+
+    public int[] rightUpgradeCosts;
 }

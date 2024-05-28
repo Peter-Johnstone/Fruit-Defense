@@ -11,6 +11,7 @@ public class HairShooting : MonoBehaviour
     [SerializeField] private Collider2D rangeCollider;
 
     [SerializeField] private float shootSpeedCooldown;
+    [SerializeField] private Animator pineappleHairAnimator;
 
     [SerializeField] private GameObject hairFollicleAttackPrefab;
     private float _timer;
@@ -31,8 +32,11 @@ public class HairShooting : MonoBehaviour
         
         if (_timer > shootSpeedCooldown && rangeCollider.IsTouchingLayers(_enemyLayerMask))
         {
-            Instantiate(hairFollicleAttackPrefab, this.transform);
-            _timer = 0;
+            // Start Attack Animation
+            pineappleHairAnimator.SetTrigger("TriggerAttack");
+            
+            // Some arbitrary number, we reset the timer properly after we fire the projectiles.
+            _timer = -10000f;
         }
     }
 
@@ -44,5 +48,12 @@ public class HairShooting : MonoBehaviour
     public Collider2D GetRangeCollider()
     {
         return rangeCollider;
+    }
+
+    public void FireProjectiles()
+    {
+        // Fire the projectiles
+        Instantiate(hairFollicleAttackPrefab, this.transform);
+        _timer = 0;
     }
 }

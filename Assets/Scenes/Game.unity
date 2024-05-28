@@ -2185,6 +2185,7 @@ MonoBehaviour:
   - {fileID: 476993976}
   - {fileID: 380548226}
   - {fileID: 2095970036}
+  Enemies: []
 --- !u!4 &779187773
 Transform:
   m_ObjectHideFlags: 0
@@ -2690,8 +2691,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d825c3cf55f134dae2f5bb315f9626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  archerCost: 11
-  pineappleCost: 11
+  archerCost: 15
+  pineappleCost: 20
 --- !u!1 &1080569312
 GameObject:
   m_ObjectHideFlags: 0
@@ -5888,7 +5889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeMenuHitbox: {fileID: 189010380}
-  selectedSpriteRenderer: {fileID: 0}
+  selectedSpriteRenderer: {fileID: 635918699}
 --- !u!224 &1891340905
 RectTransform:
   m_ObjectHideFlags: 0

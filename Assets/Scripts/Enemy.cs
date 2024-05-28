@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         lifePoints -= lifeLost;
         if (lifePoints <= 0)
         {
-            LevelManager.Main.DequeueEnemy(false);
+            LevelManager.Main.DequeueEnemy(false, gameObject);
         }
     }
 
@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
     {
         if (!_isQueued && _spriteRenderer.isVisible)
         {
-            LevelManager.Main.EnqueueEnemy(gameObject);
+            LevelManager.Main.AddEnemy(gameObject);
             _isQueued = true;
         }
         UpdateNextWaypoint();
@@ -111,7 +111,7 @@ public class Enemy : MonoBehaviour
             
         if (_nextWaypointIndex == LevelManager.Main.path.Length)
         {
-            LevelManager.Main.DequeueEnemy(true);
+            LevelManager.Main.DequeueEnemy(true, gameObject);
             Destroy(gameObject);
         }
         else

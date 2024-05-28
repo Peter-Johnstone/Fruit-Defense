@@ -69,7 +69,7 @@ public class IconFollowMouse : MonoBehaviour
             if (!validTowerPlacement) return;
             // Valid Placement + Click: Buy and Place Tower
             UpgradeMenu.Main.TowerWasPlacedThisFramed();
-            Economy.Main.BuyTower(CostsData.Main.GetTowerCost(_towerPrefab.name));
+            Economy.Main.Buy(CostsData.Main.GetTowerCost(_towerPrefab.name));
             Instantiate(_towerPrefab, transform.position, transform.rotation);
 
         }

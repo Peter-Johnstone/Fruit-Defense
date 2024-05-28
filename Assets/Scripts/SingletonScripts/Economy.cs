@@ -34,7 +34,7 @@ namespace SingletonScripts
             UpdateEconomy();
         }
 
-        public bool BuyTower(int cost)
+        public bool Buy(int cost)
         {
             if (cost > coins) return false;
             coins -= cost;

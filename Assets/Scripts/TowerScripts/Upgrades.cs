@@ -1,3 +1,4 @@
+using SingletonScripts;
 using UnityEngine;
 using UpdateMenuScripts;
 
@@ -22,8 +23,11 @@ namespace TowerScripts
         }
         public void UpgradeLeft()
         {
+            if (!Economy.Main.CheckCanBuy(upgradeTree.leftUpgradeCosts[LeftUpgradePathLevel])) return;
+            Economy.Main.Buy(upgradeTree.leftUpgradeCosts[LeftUpgradePathLevel]);
             LeftUpgradePathLevel++;
-            LeftUpgrade = upgradeTree.leftUpgrades[LeftUpgradePathLevel];
+            if (upgradeTree.leftUpgrades.Length > LeftUpgradePathLevel) 
+                LeftUpgrade = upgradeTree.leftUpgrades[LeftUpgradePathLevel];
             LeftUpgradeText.SetUpgradedText();
             OnUpgrade?.Invoke();
 
@@ -31,8 +35,12 @@ namespace TowerScripts
 
         public void UpgradeRight()
         {
+
+            if (!Economy.Main.CheckCanBuy(upgradeTree.rightUpgradeCosts[RightUpgradePathLevel])) return;
+            Economy.Main.Buy(upgradeTree.rightUpgradeCosts[RightUpgradePathLevel]);
             RightUpgradePathLevel++;
-            RightUpgrade = upgradeTree.rightUpgrades[RightUpgradePathLevel];
+            if (upgradeTree.rightUpgrades.Length > RightUpgradePathLevel) 
+                RightUpgrade = upgradeTree.rightUpgrades[RightUpgradePathLevel];
             RightUpgradeText.SetUpgradedText();
             OnUpgrade?.Invoke();
         }
