@@ -1,3 +1,4 @@
+using EnemyScripts;
 using UnityEngine;
 
 namespace ArcherScripts
@@ -11,7 +12,7 @@ namespace ArcherScripts
         
         
         private Transform _target;
-        private Enemy _enemy;
+        private BaseEnemy _baseEnemy;
         private SpriteRenderer _spriteRenderer;
         private Stats _stats;
         
@@ -29,7 +30,7 @@ namespace ArcherScripts
                 Destroy(gameObject);
                 return;
             }
-            _enemy = _target.GetComponent<Enemy>();
+            _baseEnemy = _target.GetComponent<BaseEnemy>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
             TrackingArrowSpawner trackingArrowSpawner= GetComponentInParent<TrackingArrowSpawner>();
             _spriteRenderer.sprite = trackingArrowSpawner.GetAnimationArrowImage();
@@ -59,14 +60,14 @@ namespace ArcherScripts
             }
             else
             {
-                if (!_enemy.IsDead())
+                if (!_baseEnemy.IsDead)
                 {
-                    _enemy.LoseLife(1);
+                    _baseEnemy.LoseLife(1);
                     _stats.IncreaseTotalDamage(1);
                 }
 
                 if (_coated)
-                    Instantiate(coatedPath, _enemy.transform.position, transform.rotation);
+                    Instantiate(coatedPath, _baseEnemy.transform.position, transform.rotation);
                 Destroy(gameObject); 
             }
         }

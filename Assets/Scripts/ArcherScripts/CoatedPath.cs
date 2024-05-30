@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using EnemyScripts;
 using SingletonScripts;
 using UnityEngine;
 
@@ -30,9 +31,9 @@ public class CoatedPath : MonoBehaviour
         
         foreach (Collider2D collision in results) 
         {
-            if (collision.name != "Enemy(Clone)") return;
+            if (collision.name != "Gremlin(Clone)" && collision.name != "Pea(Clone)") return;
                     
-            collision.GetComponent<Enemy>().TriggerSlip(); 
+            collision.GetComponent<BaseEnemy>().TriggerStickiness(); 
         }
     }
 

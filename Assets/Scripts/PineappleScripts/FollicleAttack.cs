@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using EnemyScripts;
 using UnityEngine;
 
 public class FollicleAttack : MonoBehaviour
@@ -33,9 +34,9 @@ public class FollicleAttack : MonoBehaviour
     
     private void OnTriggerEnter2D (Collider2D other) 
     {
-        if (LayerMask.LayerToName(other.gameObject.layer) == "Enemy" && !other.GetComponent<Enemy>().IsDead())
+        if (LayerMask.LayerToName(other.gameObject.layer) == "Enemy" && !other.GetComponent<BaseEnemy>().IsDead)
         {
-            other.GetComponent<Enemy>().LoseLife(1);
+            other.GetComponent<BaseEnemy>().LoseLife(1);
             _stats.IncreaseTotalDamage(1);
             Destroy(gameObject);
         }

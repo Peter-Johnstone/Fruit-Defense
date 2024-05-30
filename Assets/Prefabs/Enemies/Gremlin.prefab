@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8451815168340582549}
   - component: {fileID: 3753501305274402117}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: Gremlin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 4.5, y: 4.5, z: 4.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1042172861, guid: d99e9a62e1a412d4b918c0df29ba8bec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,10 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5968609e8dc0944bcb3ce662bbb792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  lifePoints: 2
-  stickySprites: {fileID: 7108339969198208228, guid: bd6708b5adb75114f88eb6fb99acdb2e, type: 3}
-  regularSprites: {fileID: 7108339969198208228, guid: 143f1a4158749bd45a7b8f569444a4e1, type: 3}
+  enemyAttributes: {fileID: 11400000, guid: 4746049d5bb989541859cfb875af4c9f, type: 2}
 --- !u!50 &5935370663080122943
 Rigidbody2D:
   serializedVersion: 4

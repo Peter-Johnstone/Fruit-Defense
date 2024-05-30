@@ -265,7 +265,7 @@ Transform:
   m_GameObject: {fileID: 99723329}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.225, y: -0.35, z: -0.005999316}
+  m_LocalPosition: {x: 0.225, y: -0.35, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.0421053}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -446,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 189010380}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.22, y: 0, z: 0.0227974}
+  m_LocalPosition: {x: 5.22, y: 0, z: 0}
   m_LocalScale: {x: 3.6, y: 3.6, z: 3.8}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1769,7 +1769,7 @@ Transform:
   m_GameObject: {fileID: 739230112}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.225, y: -0.35, z: -0.005999316}
+  m_LocalPosition: {x: -0.225, y: -0.35, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.0421053}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2242,7 +2242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbddf56150cc374789d0fc1c55ebfe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8806368973138497497, guid: ef07c8e881cb71e429255cd5fdec4dc6, type: 3}
+  gremlin: {fileID: 8806368973138497497, guid: ef07c8e881cb71e429255cd5fdec4dc6, type: 3}
+  pea: {fileID: 2847541088999546037, guid: f43db12cd33c5a1459ca3f4bd34cfa35, type: 3}
   startPoint: {fileID: 2056852797}
   path:
   - {fileID: 2038051777}
@@ -2256,7 +2257,7 @@ MonoBehaviour:
   - {fileID: 476993976}
   - {fileID: 380548226}
   - {fileID: 2095970036}
-  Enemies: []
+  enemies: []
 --- !u!4 &779187773
 Transform:
   m_ObjectHideFlags: 0

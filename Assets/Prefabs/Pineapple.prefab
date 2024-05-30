@@ -393,7 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   follicleMoveSpeed: 7
   rangeCollider: {fileID: 140216387248918681}
-  shootSpeedCooldown: 4
+  shootSpeedCooldown: 3
   pineappleHairAnimator: {fileID: 1630237554793309797}
   hairFollicleAttackPrefab: {fileID: 9003220663627095173, guid: 823af72774bdec74c9bfbffa4b77016e, type: 3}
 --- !u!1 &8180876956981519254

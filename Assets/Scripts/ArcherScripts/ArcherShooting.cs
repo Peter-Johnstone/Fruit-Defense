@@ -62,7 +62,7 @@ public class ArcherShooting : MonoBehaviour
     
     private void Update()
     {
-        if (LevelManager.Main.Enemies.Count == 0) return;
+        if (LevelManager.Main.enemies.Count == 0) return;
         
         CreateTarget();
         if (_target)
@@ -147,11 +147,11 @@ public class ArcherShooting : MonoBehaviour
 
     public void TriggerShoot()
     {
-        if (LevelManager.Main.RoundOver()) return;
+        if (LevelManager.Main.RoundOver) return;
+        
         CreateTarget();
         _bowAnimator.SetTrigger("ShootTrigger");
         _timer = 0;
-        
         
         animationArrowSpriteRenderer.sprite = _isCoating ? coatedArrow : regularArrow;
                 
@@ -163,7 +163,7 @@ public class ArcherShooting : MonoBehaviour
         _target = null;
         
         // Try to find the first target-able enemy in the list of enemies. Break once we find one, alternatively, if none are found, _target remains null.
-        foreach (GameObject enemy in LevelManager.Main.Enemies)
+        foreach (GameObject enemy in LevelManager.Main.enemies)
         {
             if (rangeCollider.IsTouching(enemy.GetComponent<Collider2D>()))
             {

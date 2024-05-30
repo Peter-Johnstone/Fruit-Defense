@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbbf293d394c4e3283786628237c081f, type: 3}
+  m_Name: Pea Attributes
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  lifePoints: 5
+  regularSprites: {fileID: 7108339969198208228, guid: 79060d897e9cc534caa4ee179e993f4d, type: 3}
+  stickySprites: {fileID: 7108339969198208228, guid: 2fc5077c06001d14180acac1f366e1b1, type: 3}
