@@ -131,8 +131,9 @@ GameObject:
   - component: {fileID: 2638290602483379588}
   - component: {fileID: 8359583886469535694}
   - component: {fileID: 140216387248918681}
+  - component: {fileID: 3261284579217070396}
   m_Layer: 0
-  m_Name: Selection Image
+  m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +149,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8272728, y: 0.8272728, z: 0.88907003}
+  m_LocalScale: {x: 1, y: 1, z: 1.0747}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1344102747509838278}
@@ -237,9 +238,22 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.000000059604645}
+  m_Offset: {x: 0.0030504633, y: -0.00000006811959}
   serializedVersion: 2
-  m_Radius: 0.65999997
+  m_Radius: 0.47799394
+--- !u!114 &3261284579217070396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630204499580548266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997afd3794804046aec01aef2c222f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradedRange: {fileID: 21300000, guid: 6c342476502578d46b9b0dc01f51f6eb, type: 3}
 --- !u!1 &2290620035529383419
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   follicleMoveSpeed: 7
   rangeCollider: {fileID: 140216387248918681}
-  shootSpeedCooldown: 3
+  shootSpeedCooldown: 3.5
   pineappleHairAnimator: {fileID: 1630237554793309797}
   hairFollicleAttackPrefab: {fileID: 9003220663627095173, guid: 823af72774bdec74c9bfbffa4b77016e, type: 3}
 --- !u!1 &8180876956981519254
@@ -410,6 +424,7 @@ GameObject:
   - component: {fileID: 4869134881826093239}
   - component: {fileID: 2687886401170788152}
   - component: {fileID: 9136189903668220745}
+  - component: {fileID: 922065061288039295}
   m_Layer: 7
   m_Name: Pineapple
   m_TagString: Untagged
@@ -427,7 +442,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.8, y: 1.97, z: 0}
-  m_LocalScale: {x: 3.3, y: 3.3, z: 3.0706246}
+  m_LocalScale: {x: 3.5000002, y: 3.5000002, z: 3.2567232}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2638290602483379588}
@@ -572,5 +587,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37dbdcf2ccff0194fabd904d7137c9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &922065061288039295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8180876956981519254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135b85c645ff611458ebdabccd8e81d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

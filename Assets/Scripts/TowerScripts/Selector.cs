@@ -16,7 +16,7 @@ public class Selector : MonoBehaviour
     private void Awake()
     {
         _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-        _selectionSpriteRenderer = transform.Find("Selection Image").GetComponent<SpriteRenderer>();
+        _selectionSpriteRenderer = transform.Find("Range").GetComponent<SpriteRenderer>();
     }
 
     public void DeselectSprite()
@@ -36,5 +36,11 @@ public class Selector : MonoBehaviour
             spriteRenderer.sortingOrder += 2;
         }
         _selectionSpriteRenderer.enabled = true; 
+    }
+
+    public void UpgradeRange(Sprite newRange)
+    {
+        _selectionSpriteRenderer.sprite = newRange;
+        _selectionSpriteRenderer.gameObject.GetComponent<CircleCollider2D>().radius = newRange.bounds.extents.x;
     }
 }

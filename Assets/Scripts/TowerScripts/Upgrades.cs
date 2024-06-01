@@ -23,7 +23,10 @@ namespace TowerScripts
         }
         public void UpgradeLeft()
         {
+            Debug.Log(LeftUpgradePathLevel);
+            // Check if we can buy and that we haven't already bought the last upgrade.
             if (!Economy.Main.CheckCanBuy(upgradeTree.leftUpgradeCosts[LeftUpgradePathLevel])) return;
+            
             Economy.Main.Buy(upgradeTree.leftUpgradeCosts[LeftUpgradePathLevel]);
             LeftUpgradePathLevel++;
             if (upgradeTree.leftUpgrades.Length > LeftUpgradePathLevel) 

@@ -25,6 +25,8 @@ public class ArcherShooting : MonoBehaviour
     [SerializeField] private SpriteLibraryAsset bowLevel2;
     [SerializeField] private SpriteLibraryAsset bowLevel3;
     [SerializeField] private Collider2D rangeCollider;
+
+    [SerializeField] private Sprite range2;
     
     private const float RotationSpeed = 3;
     private const float PositionSpeed = 10f;
@@ -117,22 +119,28 @@ public class ArcherShooting : MonoBehaviour
     }
 
 
-    private void HandleUpgrade()
-    {
-        if (_upgrades.LeftUpgradePathLevel == 1)
-            _coatArrowUpgrade = true;
-        if (_upgrades.RightUpgradePathLevel == 1)
+        private void HandleUpgrade()
         {
-            attackCooldown = 1f;   
-            _spriteLibrary.spriteLibraryAsset = bowLevel2;
-        }
+            if (_upgrades.LeftUpgradePathLevel == 1)
+                _coatArrowUpgrade = true;
+            if (_upgrades.RightUpgradePathLevel == 1)
+            {
+                attackCooldown = .8f;   
+                _spriteLibrary.spriteLibraryAsset = bowLevel2;
+            }
 
-        if (_upgrades.RightUpgradePathLevel == 2)
-        {
-            attackCooldown = .5f;
-            _spriteLibrary.spriteLibraryAsset = bowLevel3;
+            if (_upgrades.RightUpgradePathLevel == 2)
+            {
+                attackCooldown = .4f;
+                _spriteLibrary.spriteLibraryAsset = bowLevel3;
+            }
+
+            if (_upgrades.LeftUpgradePathLevel == 2)
+            {
+                // Range upgrade
+                GetComponentInParent<Selector>().UpgradeRange(range2);
+            }
         }
-    }
 
     private void HandleRoundOver()
     {

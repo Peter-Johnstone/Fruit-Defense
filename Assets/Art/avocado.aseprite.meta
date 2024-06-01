@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 800c6a26076287b4aab7bc1562473ce8
+guid: a50d9c2786c769949a8a2e3d212373c4
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: pineapple range
+  - name: avocado
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5161291, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 132
-      height: 132
-    spriteID: 4c0d83befe8bee64d9409cbe885e0536
+      width: 31
+      height: 34
+    spriteID: 47e45d608c38a3d4b9210d13142b36df
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,25 +144,25 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1498569169
-    name: pineapple range
+    guid: -1877573963
+    name: avocado
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: pineapple range
+    - name: avocado
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
+        x: 1
         y: 0
-        width: 132
-        height: 132
-      spriteId: 4c0d83befe8bee64d9409cbe885e0536
+        width: 31
+        height: 34
+      spriteId: 47e45d608c38a3d4b9210d13142b36df
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 132, y: 132}
+  canvasSize: {x: 34, y: 34}

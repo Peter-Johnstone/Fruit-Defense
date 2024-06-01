@@ -11,7 +11,7 @@ public class IconFollowMouse : MonoBehaviour
 
     
     
-    [SerializeField] private Sprite canPlaceImage;
+    private Sprite _canPlaceImage;
     [SerializeField] private Sprite cantPlaceImage;
 
     [SerializeField] private float hitboxRadius;
@@ -39,9 +39,12 @@ public class IconFollowMouse : MonoBehaviour
     private void Start()
     {
         _towerPrefab = GetComponentInParent<TowerIcon>().towerPrefab;
+        
+        _canPlaceImage = _towerPrefab.transform.Find("Range").GetComponentInChildren<SpriteRenderer>().sprite;
+        
         _draggerImageRenderer = transform.Find("Dragger Image").GetComponentInChildren<SpriteRenderer>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRenderer.sprite = canPlaceImage;
+        _spriteRenderer.sprite = _canPlaceImage;
         _camera = Camera.main;
         _draggerImageRenderer.sprite = _towerPrefab.GetComponent<SpriteRenderer>().sprite;
         _validPlacementLayerMask = LayerMask.GetMask("No Tower Terrain") | LayerMask.GetMask("Tower");
@@ -75,7 +78,7 @@ public class IconFollowMouse : MonoBehaviour
         }
         else if (validTowerPlacement)
             // Sprite placement is valid, but we aren't clicking. Indicate valid potential placement with blue icon
-            _spriteRenderer.sprite = canPlaceImage;
+            _spriteRenderer.sprite = _canPlaceImage;
         else
             // Sprite placement is invalid, and we aren't clicking. Indicate invalid potential placement with red icon
             _spriteRenderer.sprite = cantPlaceImage;

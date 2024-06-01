@@ -630,6 +630,123 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1001 &357459184
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 557366815}
+    m_Modifications:
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402089817608615095, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402089817608615095, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.034
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746913835751844992, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: towerPrefab
+      value: 
+      objectReference: {fileID: 4524248708625798720, guid: e984590319727d54ca34a55330bda572, type: 3}
+    - target: {fileID: 8339700348107367327, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_Size.y
+      value: 0.32171914
+      objectReference: {fileID: 0}
+    - target: {fileID: 8339700348107367327, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.03352298
+      objectReference: {fileID: 0}
+    - target: {fileID: 8766322771167706176, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_Name
+      value: Avocado Icon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
 --- !u!1 &378608265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,6 +1129,7 @@ RectTransform:
   m_Children:
   - {fileID: 1864192275}
   - {fileID: 413747699}
+  - {fileID: 1694109884}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1621,11 +1739,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.75
+      value: 1.91
       objectReference: {fileID: 0}
     - target: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1665,15 +1783,15 @@ PrefabInstance:
       objectReference: {fileID: 8180876956981519254, guid: fc84cb7ff56995d4c9ee70e5828cbf34, type: 3}
     - target: {fileID: 8716895275744972362, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8716895275744972362, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8716895275744972362, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8766322771167706176, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
       propertyPath: m_Name
@@ -2912,6 +3030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   archerCost: 15
   pineappleCost: 20
+  avocadoCost: 30
 --- !u!1 &1080569312
 GameObject:
   m_ObjectHideFlags: 0
@@ -5690,6 +5809,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!224 &1694109884 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2560070586013307501, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+  m_PrefabInstance: {fileID: 357459184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1699308559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6467,6 +6591,18 @@ PrefabInstance:
       propertyPath: cantPlaceImage
       value: 
       objectReference: {fileID: -3697362386713011662, guid: d9bd04c562245a446ad48a0d94fc736f, type: 3}
+    - target: {fileID: 8716895275744972362, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716895275744972362, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716895275744972362, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8766322771167706176, guid: bc9a97ea4b43b53468a696cfd5bccfb8, type: 3}
       propertyPath: m_Name
       value: Archer Icon

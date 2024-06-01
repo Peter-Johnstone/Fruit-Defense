@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e34c5ddc42934498fcab3c2458d154, type: 3}
-  m_Name: Pineapple Upgrade Tree
+  m_Name: Orange Upgrade Tree
   m_EditorClassIdentifier: 
   leftUpgrades:
-  - Longer Range (8)
-  - Something
+  - Juicy Bolts (20)
+  - Extra Range (13)
   rightUpgrades:
-  - Stem Traps
-  - Something2
-  leftUpgradeCosts: 08000000
-  rightUpgradeCosts: 
+  - Rapid Fire (15)
+  - Super Speed (10)
+  leftUpgradeCosts: 140000000d000000
+  rightUpgradeCosts: 0f0000000a000000

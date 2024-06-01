@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e34c5ddc42934498fcab3c2458d154, type: 3}
-  m_Name: Archer Upgrade Tree
+  m_Name: Avocado Upgrade Tree
   m_EditorClassIdentifier: 
   leftUpgrades:
-  - Juicy Bolts (20)
-  - Something
+  - Faster Growing
+  - Longer Shooting
   rightUpgrades:
-  - Rapid Fire (15)
-  - Super Speed (10)
-  leftUpgradeCosts: 1400000000000000
-  rightUpgradeCosts: 0f0000000a000000
+  - Explosive Pits
+  - Mad Avocado
+  leftUpgradeCosts: 0a0000000f000000
+  rightUpgradeCosts: 1900000028000000

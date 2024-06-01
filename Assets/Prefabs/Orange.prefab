@@ -47,7 +47,6 @@ MonoBehaviour:
   animationArrow: {fileID: 6198753796803098199}
   trackingArrow: {fileID: 162861358861471612, guid: 5a9c4c6e29fe53f4691e8c56c3af2960, type: 3}
   bow: {fileID: 5459818757794656030}
-  _stats: {fileID: 4088311019482613500}
 --- !u!1 &3485463138518650454
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +59,7 @@ GameObject:
   - component: {fileID: 8525912754890784024}
   - component: {fileID: 7415480939723191014}
   m_Layer: 0
-  m_Name: Selection Image
+  m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +75,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.013136865}
-  m_LocalScale: {x: 0.78, y: 0.78, z: 0.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1146169609748333912}
@@ -165,9 +164,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.004573686, y: 0.0000000681196}
   serializedVersion: 2
-  m_Radius: 1.3199999
+  m_Radius: 1.0074118
 --- !u!1 &5459818757794656030
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circleRadius: 0.15
-  attackCooldown: 2
+  attackCooldown: 1.5
   archerAnimator: {fileID: 6788429508670862776}
   archerLeft: {fileID: -1624347208, guid: 9787d709532886947b1f243cf1cc9f03, type: 3}
   archerRight: {fileID: 1245750699, guid: 9787d709532886947b1f243cf1cc9f03, type: 3}
@@ -302,6 +301,7 @@ MonoBehaviour:
   bowLevel2: {fileID: 7108339969198208228, guid: 0b8ad478d08a0f84eaf1eeac1578766b, type: 3}
   bowLevel3: {fileID: 7108339969198208228, guid: b76d0d94aaf3fcb408fa8c04c47bb9ee, type: 3}
   rangeCollider: {fileID: 7415480939723191014}
+  range2: {fileID: 21300000, guid: 01e39381ccb67374e96bfce6fece3ade, type: 3}
 --- !u!114 &3958635970495383308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 3972690473157926262}
   - component: {fileID: 4088311019482613500}
   m_Layer: 7
-  m_Name: Archer
+  m_Name: Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

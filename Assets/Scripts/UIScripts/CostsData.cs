@@ -8,6 +8,7 @@ namespace SingletonScripts
     {
         [SerializeField] private int archerCost;
         [SerializeField] private int pineappleCost;
+        [SerializeField] private int avocadoCost;
 
         public static CostsData Main { get; private set; }
 
@@ -22,10 +23,12 @@ namespace SingletonScripts
         {
             switch (towerName)
             {
-                case "Archer":
+                case "Orange":
                     return archerCost;
                 case "Pineapple":
                     return pineappleCost;
+                case "Avocado":
+                    return avocadoCost;
             }
 
             return -1;
