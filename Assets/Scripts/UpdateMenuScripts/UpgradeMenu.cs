@@ -1,4 +1,4 @@
-using System;
+
 using UnityEngine;
 
 namespace UpdateMenuScripts
@@ -85,8 +85,8 @@ namespace UpdateMenuScripts
 
             upgradeMenuHitbox.transform.position = mousePosition.x < 2.7 ? upgradeMenuRightPosition.position : upgradeMenuLeftPosition.position;
             DamageDisplay.UpdateRelevantTowerStats();
-            LeftUpgradeText.SetUpgradedText();
-            RightUpgradeText.SetUpgradedText();
+            LeftUpgradeIcon.SetUpgradeLeftIcon();
+            RightUpgradeIcon.SetUpgradeRightIcon();
         }
 
         private void HideUpgradeMenu()

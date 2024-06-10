@@ -15,37 +15,54 @@ namespace TowerScripts
     
         public string LeftUpgrade { get; private set; }
         public string RightUpgrade { get; private set; }
-    
+
+
+        
+        
+        public bool LeftUpgradePathFinished { get; private set; }
+        
+        public bool RightUpgradePathFinished { get; private set; }
+        
         public void Awake()
         {
             LeftUpgrade = upgradeTree.leftUpgrades[0];
             RightUpgrade = upgradeTree.rightUpgrades[0];
+            
         }
         public void UpgradeLeft()
         {
-            Debug.Log(LeftUpgradePathLevel);
             // Check if we can buy and that we haven't already bought the last upgrade.
-            if (!Economy.Main.CheckCanBuy(upgradeTree.leftUpgradeCosts[LeftUpgradePathLevel])) return;
+            if (LeftUpgradePathFinished || !Economy.Main.CheckCanBuy(upgradeTree.leftUpgradeCosts[LeftUpgradePathLevel])) return;
             
             Economy.Main.Buy(upgradeTree.leftUpgradeCosts[LeftUpgradePathLevel]);
             LeftUpgradePathLevel++;
-            if (upgradeTree.leftUpgrades.Length > LeftUpgradePathLevel) 
+            if (LeftUpgradePathLevel == upgradeTree.leftUpgrades.Length)
+            {
+                LeftUpgradePathFinished = true;
+            } else 
                 LeftUpgrade = upgradeTree.leftUpgrades[LeftUpgradePathLevel];
-            LeftUpgradeText.SetUpgradedText();
+            
+            LeftUpgradeIcon.SetUpgradeLeftIcon();
             OnUpgrade?.Invoke();
 
         }
 
         public void UpgradeRight()
         {
-
-            if (!Economy.Main.CheckCanBuy(upgradeTree.rightUpgradeCosts[RightUpgradePathLevel])) return;
+            // Check if we can buy and that we haven't already bought the last upgrade.
+            if (RightUpgradePathFinished || !Economy.Main.CheckCanBuy(upgradeTree.rightUpgradeCosts[RightUpgradePathLevel])) return;
+            
             Economy.Main.Buy(upgradeTree.rightUpgradeCosts[RightUpgradePathLevel]);
             RightUpgradePathLevel++;
-            if (upgradeTree.rightUpgrades.Length > RightUpgradePathLevel) 
+            if (RightUpgradePathLevel == upgradeTree.rightUpgrades.Length)
+            {
+                RightUpgradePathFinished = true;
+            } else 
                 RightUpgrade = upgradeTree.rightUpgrades[RightUpgradePathLevel];
-            RightUpgradeText.SetUpgradedText();
+            
+            RightUpgradeIcon.SetUpgradeRightIcon();
             OnUpgrade?.Invoke();
+
         }
     }
 }

@@ -14,6 +14,7 @@ public class HairShooting : MonoBehaviour
     [SerializeField] private Animator pineappleHairAnimator;
 
     [SerializeField] private GameObject hairFollicleAttackPrefab;
+    [SerializeField] private GameObject hairFollicleAttackPrefabHot;
     private float _timer;
     private LayerMask _enemyLayerMask;
     
@@ -54,6 +55,12 @@ public class HairShooting : MonoBehaviour
     {
         // Fire the projectiles
         Instantiate(hairFollicleAttackPrefab, this.transform);
+        _timer = 0;
+    }
+
+    public void FireProjectilesHot()
+    {
+        Instantiate(hairFollicleAttackPrefabHot, this.transform);
         _timer = 0;
     }
 }

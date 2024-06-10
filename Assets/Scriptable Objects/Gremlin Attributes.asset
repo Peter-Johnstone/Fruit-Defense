@@ -16,3 +16,4 @@ MonoBehaviour:
   lifePoints: 2
   regularSprites: {fileID: 7108339969198208228, guid: 143f1a4158749bd45a7b8f569444a4e1, type: 3}
   stickySprites: {fileID: 7108339969198208228, guid: bd6708b5adb75114f88eb6fb99acdb2e, type: 3}
+  burningSprites: {fileID: 7108339969198208228, guid: 103e7658a4073d94eb3dd66985c8dad0, type: 3}

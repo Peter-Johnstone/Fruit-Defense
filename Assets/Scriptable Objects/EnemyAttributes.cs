@@ -10,5 +10,6 @@ namespace Scriptable_Objects
         public int lifePoints;
         public SpriteLibraryAsset regularSprites;
         public SpriteLibraryAsset stickySprites;
+        public SpriteLibraryAsset burningSprites;
     }
 }

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Orange Upgrade Tree
   m_EditorClassIdentifier: 
   leftUpgrades:
-  - Juicy Bolts (20)
+  - Juicy Bolts (15)
   - Extra Range (13)
   rightUpgrades:
   - Rapid Fire (15)
   - Super Speed (10)
-  leftUpgradeCosts: 140000000d000000
+  leftUpgradeCosts: 0f0000000d000000
   rightUpgradeCosts: 0f0000000a000000

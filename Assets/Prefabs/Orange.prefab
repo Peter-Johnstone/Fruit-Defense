@@ -301,6 +301,8 @@ MonoBehaviour:
   bowLevel2: {fileID: 7108339969198208228, guid: 0b8ad478d08a0f84eaf1eeac1578766b, type: 3}
   bowLevel3: {fileID: 7108339969198208228, guid: b76d0d94aaf3fcb408fa8c04c47bb9ee, type: 3}
   rangeCollider: {fileID: 7415480939723191014}
+  orangeJuicyArrows: {fileID: 7108339969198208228, guid: bb8d4f9b49477564eb4cc36285b1b058, type: 3}
+  orangeSpriteLibrary: {fileID: 1206779707683019089}
   range2: {fileID: 21300000, guid: 01e39381ccb67374e96bfce6fece3ade, type: 3}
 --- !u!114 &3958635970495383308
 MonoBehaviour:
@@ -445,6 +447,8 @@ GameObject:
   - component: {fileID: 6788429508670862776}
   - component: {fileID: 3972690473157926262}
   - component: {fileID: 4088311019482613500}
+  - component: {fileID: 1206779707683019089}
+  - component: {fileID: 5053389527276353280}
   m_Layer: 7
   m_Name: Orange
   m_TagString: Untagged
@@ -510,7 +514,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 1245750699, guid: 9787d709532886947b1f243cf1cc9f03, type: 3}
+  m_Sprite: {fileID: -462789780, guid: 505bc335535e63742aafefefcda46178, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -636,3 +640,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37dbdcf2ccff0194fabd904d7137c9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1206779707683019089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886682597973064249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 97abf64ccb374e749b24292308652402, type: 3}
+--- !u!114 &5053389527276353280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886682597973064249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 4.4160393e-15
+  m_labelHash: 0.0000000054741527
+  m_SpriteKey: 0
+  m_SpriteHash: 610612239

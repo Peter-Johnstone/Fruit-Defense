@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8127560566033555632}
   - component: {fileID: 1630237554793309797}
   - component: {fileID: 6741327727088842369}
+  - component: {fileID: 3567839744842920641}
+  - component: {fileID: 6589427791620644730}
   m_Layer: 7
   m_Name: Hair
   m_TagString: Untagged
@@ -120,6 +122,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30ee09a2865c65419c7d5b452baf62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hotHairSprites: {fileID: 7108339969198208228, guid: 496f6816c5fe8d94c9dea36a42facac2, type: 3}
+--- !u!114 &3567839744842920641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432048597496875670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: f0caeb11bb52b6a42875c4f645ee8853, type: 3}
+--- !u!114 &6589427791620644730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432048597496875670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 0.009161512
+  m_labelHash: 0.0000003839058
+  m_SpriteKey: 0
+  m_SpriteHash: 430111821
 --- !u!1 &1630204499580548266
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,9 +271,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0030504633, y: -0.00000006811959}
+  m_Offset: {x: -0.00040119034, y: -0.00000006811959}
   serializedVersion: 2
-  m_Radius: 0.47799394
+  m_Radius: 0.40033028
 --- !u!114 &3261284579217070396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +298,8 @@ GameObject:
   - component: {fileID: 5646044070480571401}
   - component: {fileID: 6340735692712963653}
   - component: {fileID: 3659885923389874944}
+  - component: {fileID: 3956675998720480919}
+  - component: {fileID: 4360825027694338336}
   m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
@@ -329,7 +364,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 244bd1ce7a8f699459e0004ce5f5fb5c, type: 3}
+  m_Sprite: {fileID: -1810219791, guid: a3e4fe032c38e7141b7ccc3bb6e00fb5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -361,6 +396,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3956675998720480919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2290620035529383419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 3.9964688e-14
+  m_labelHash: 6.368321e-28
+  m_SpriteKey: 0
+  m_SpriteHash: 385685371
+--- !u!114 &4360825027694338336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2290620035529383419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 30febd426bf344843a68f91b3b719b84, type: 3}
 --- !u!1 &2577688358105333953
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +475,7 @@ MonoBehaviour:
   shootSpeedCooldown: 3.5
   pineappleHairAnimator: {fileID: 1630237554793309797}
   hairFollicleAttackPrefab: {fileID: 9003220663627095173, guid: 823af72774bdec74c9bfbffa4b77016e, type: 3}
+  hairFollicleAttackPrefabHot: {fileID: 9003220663627095173, guid: 2638407f06e094c4e9e1223e1ece75fe, type: 3}
 --- !u!1 &8180876956981519254
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,3 +667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135b85c645ff611458ebdabccd8e81d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pineappleSpriteLibrary: {fileID: 4360825027694338336}
+  pineappleUpgradedRange: {fileID: 7108339969198208228, guid: f93ab82a3de6d4346b031d1e0edbf294, type: 3}
+  spriteRendererOfPineappleUpgradeLevel: {fileID: 7298622573559523043}

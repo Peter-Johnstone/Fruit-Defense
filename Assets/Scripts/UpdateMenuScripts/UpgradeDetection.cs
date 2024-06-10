@@ -9,7 +9,16 @@ public class UpgradeDetection : MonoBehaviour
 
     [SerializeField] private Sprite notSelectedImage;
     [SerializeField] private Sprite selectedImage;
-
+    
+    public SpriteRenderer upgradeLevelBoxUpper;
+    public SpriteRenderer upgradeLevelBoxLower;
+    public Sprite filledUpgradeBox;
+    public  Sprite unfilledUpgradeBox;
+    
+    public SpriteRenderer upgradeArrowRenderer;
+    public Sprite arrowSprite;
+    public Sprite checkmarkSprite;
+    
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider2D;
     private Camera _camera;

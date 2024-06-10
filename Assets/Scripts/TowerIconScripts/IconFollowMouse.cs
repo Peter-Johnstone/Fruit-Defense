@@ -19,22 +19,11 @@ public class IconFollowMouse : MonoBehaviour
     private GameObject _towerPrefab;
     private SpriteRenderer _spriteRenderer;
     private SpriteRenderer _draggerImageRenderer;
-    private bool _currentlyShowing = false;
     private LayerMask _validPlacementLayerMask;
     private LayerMask _towerLayerMask;
 
-    
+    private bool _draggerHiddenThisFrame;
     private Camera _camera;
-
-    public void HandleOnClicked()
-    {
-        if (!_currentlyShowing)
-        {
-            _currentlyShowing = true;
-            _spriteRenderer.enabled = true;
-            _draggerImageRenderer.enabled = true;
-        }
-    }
 
     private void Start()
     {
@@ -54,10 +43,6 @@ public class IconFollowMouse : MonoBehaviour
     
     private void Update()
     {
-
-        if (!_currentlyShowing) return;
-        
-        
         Vector3 cameraPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(cameraPosition.x, cameraPosition.y, 0);
         
@@ -68,7 +53,7 @@ public class IconFollowMouse : MonoBehaviour
         {
             // We've clicked screen: Stop dragging sprite
             HideDragger();
-
+            
             if (!validTowerPlacement) return;
             // Valid Placement + Click: Buy and Place Tower
             UpgradeMenu.Main.TowerWasPlacedThisFramed();
@@ -86,8 +71,6 @@ public class IconFollowMouse : MonoBehaviour
 
     private void HideDragger()
     {
-        _spriteRenderer.enabled = false;
-        _draggerImageRenderer.enabled = false;
-        _currentlyShowing = false;
+        TowerMenu.SetDraggerInactive(gameObject);
     }
 }

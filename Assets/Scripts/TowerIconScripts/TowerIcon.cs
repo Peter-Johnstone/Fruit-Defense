@@ -15,7 +15,7 @@ public class TowerIcon : MonoBehaviour
     private SpriteRenderer _purchasableOverlayRenderer;
 
     private TextMeshProUGUI _towerCostTMP;
-    [SerializeField] private IconFollowMouse _iconFollowMouse;
+    [SerializeField] private GameObject _dragger;
 
     private Camera _camera;
     private void Start()
@@ -26,12 +26,12 @@ public class TowerIcon : MonoBehaviour
         _camera = Camera.main;
     }
 
-    private void LateUpdate() // Critical that this is late update. Has to resolve after IconFollowMouse update.
+    private void Update() // Critical that this is late update. Has to resolve after IconFollowMouse update.
     {
         Vector2 mouseWorldPos = _camera.ScreenToWorldPoint(Input.mousePosition);
         if (_collider2D.bounds.Contains(mouseWorldPos) && Input.GetMouseButtonDown(0))
         {
-            _iconFollowMouse.HandleOnClicked();
+            TowerMenu.ActivateNewDragger(_dragger);
         }
 
         // Check if we can afford the tower. This changes the icon's display.

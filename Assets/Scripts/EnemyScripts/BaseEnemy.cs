@@ -1,6 +1,7 @@
 using System.Collections;
 using Scriptable_Objects;
 using SingletonScripts;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 
@@ -25,6 +26,12 @@ namespace EnemyScripts
         private float _initialMoveSpeed;
         private int _hp;
         private float _moveSpeed;
+        public float DistanceTraveled { get; private set; }
+        
+        // Burning related stuff
+        private float _burnTimer;
+        private float _burnTickInterval;
+        private float _burnTickTimer;
         
         
         private void Start()
@@ -38,6 +45,7 @@ namespace EnemyScripts
             
             _moveSpeed = enemyAttributes.moveSpeed;
             _initialMoveSpeed = enemyAttributes.moveSpeed;
+            DistanceTraveled = 0;
         }
 
         public void LoseLife(int lifeLost)
@@ -51,6 +59,7 @@ namespace EnemyScripts
         
         private void FixedUpdate()
         {
+            CheckBurn();
             if (IsDead)
             {
                 if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_animator.IsInTransition(0))
@@ -69,6 +78,24 @@ namespace EnemyScripts
             Vector2 direction = (_target.position - transform.position).normalized;
             AnimateMovement(direction);
             Move(direction);
+        }
+
+        private void CheckBurn()
+        {
+            if (_burnTimer > 0)
+            {
+                _burnTimer -= Time.fixedDeltaTime;
+                _burnTickTimer -= Time.fixedDeltaTime;
+                if (_burnTickTimer < 0)
+                {
+                    _burnTickTimer = _burnTickInterval;
+                    LoseLife(1);
+                }
+            }
+            else
+            {
+                _spriteLibrary.spriteLibraryAsset = enemyAttributes.regularSprites;
+            }
         }
 
         private void AnimateMovement(Vector2 direction)
@@ -95,6 +122,8 @@ namespace EnemyScripts
     
         private void Move(Vector2 direction)
         {
+            DistanceTraveled += _moveSpeed * Time.deltaTime; // Useful for calculating overtakes
+            
             _rb.velocity = direction * _moveSpeed;
             if (!(Vector2.Distance(_target.position, transform.position) < 0.1f)) return;
             _nextWaypointIndex++;
@@ -139,6 +168,14 @@ namespace EnemyScripts
             _isSticky = false;
             _moveSpeed = _initialMoveSpeed; // Reset move speed after delay
             _spriteLibrary.spriteLibraryAsset = enemyAttributes.regularSprites;
+        }
+
+        public void Burn(float seconds, float interval)
+        {
+            _burnTimer = seconds;
+            _burnTickInterval = interval;
+            _burnTickTimer = _burnTickInterval;
+            _spriteLibrary.spriteLibraryAsset = enemyAttributes.burningSprites;
         }
     }
 }

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Pineapple Upgrade Tree
   m_EditorClassIdentifier: 
   leftUpgrades:
-  - Longer Range (8)
+  - Longer Range (10)
   - Something
   rightUpgrades:
-  - Stem Traps
+  - Hot Hair (20)
   - Something2
-  leftUpgradeCosts: 08000000
-  rightUpgradeCosts: 
+  leftUpgradeCosts: 0a000000
+  rightUpgradeCosts: 00000000

@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using EnemyScripts;
 using SingletonScripts;
 using TowerScripts;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.U2D.Animation;
 using Random = UnityEngine.Random;
 
@@ -25,6 +27,8 @@ public class ArcherShooting : MonoBehaviour
     [SerializeField] private SpriteLibraryAsset bowLevel2;
     [SerializeField] private SpriteLibraryAsset bowLevel3;
     [SerializeField] private Collider2D rangeCollider;
+    [SerializeField] private SpriteLibraryAsset orangeJuicyArrows;
+    [SerializeField] private SpriteLibrary orangeSpriteLibrary;
 
     [SerializeField] private Sprite range2;
     
@@ -35,6 +39,8 @@ public class ArcherShooting : MonoBehaviour
     private Animator _bowAnimator;
     private Transform _target;
     private SpriteLibrary _spriteLibrary;
+
+    
 
     
     private float _timer;
@@ -122,7 +128,11 @@ public class ArcherShooting : MonoBehaviour
         private void HandleUpgrade()
         {
             if (_upgrades.LeftUpgradePathLevel == 1)
+            {
                 _coatArrowUpgrade = true;
+                orangeSpriteLibrary.spriteLibraryAsset = orangeJuicyArrows;
+            }
+
             if (_upgrades.RightUpgradePathLevel == 1)
             {
                 attackCooldown = .8f;   
@@ -169,15 +179,16 @@ public class ArcherShooting : MonoBehaviour
     private void CreateTarget()
     {
         _target = null;
-        
+        float mostProgressedEnemy = 0;
         // Try to find the first target-able enemy in the list of enemies. Break once we find one, alternatively, if none are found, _target remains null.
         foreach (GameObject enemy in LevelManager.Main.enemies)
         {
-            if (rangeCollider.IsTouching(enemy.GetComponent<Collider2D>()))
-            {
-                _target = enemy.transform;
-                break;
-            }
+            if (!rangeCollider.IsTouching(enemy.GetComponent<Collider2D>())) continue;
+            
+            if (!(enemy.GetComponent<BaseEnemy>().DistanceTraveled > mostProgressedEnemy)) continue;
+                
+            mostProgressedEnemy = enemy.GetComponent<BaseEnemy>().DistanceTraveled;
+            _target = enemy.transform;
         }
     }
 

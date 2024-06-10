@@ -12,6 +12,7 @@ public class FollicleAttack : MonoBehaviour
     private float _moveSpeed;
     private Collider2D _rangeCollider;
     private Stats _stats;
+    private bool _isHot;
     
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class FollicleAttack : MonoBehaviour
         float radians = directionDegrees * Mathf.Deg2Rad;
         _directionVector = new Vector3(Mathf.Cos(radians), Mathf.Sin(radians), 0);
         _moveSpeed = GetComponentInParent<HairShooting>().GetFollicleAttackSpeed();
+        _isHot = GetComponentInParent<Hair>().HotHairActive;
         _rangeCollider = GetComponentInParent<HairShooting>().GetRangeCollider();
         _stats = GetComponentInParent<Stats>();
 
@@ -36,7 +38,10 @@ public class FollicleAttack : MonoBehaviour
     {
         if (LayerMask.LayerToName(other.gameObject.layer) == "Enemy" && !other.GetComponent<BaseEnemy>().IsDead)
         {
+            
             other.GetComponent<BaseEnemy>().LoseLife(1);
+            if (_isHot)
+                other.GetComponent<BaseEnemy>().Burn(5, 5);
             _stats.IncreaseTotalDamage(1);
             Destroy(gameObject);
         }
